@@ -15,7 +15,12 @@ Make a new folder called PRADA
 `wget 
 http://sourceforge.net/projects/prada/files/pyPRADA/pyPRADA_1.2.tar.gz/download`  
 
-untar the file  
-`tar -xvzf
+A file named `download` will appear in the folder. untar the file   
+`tar -xvzf download`  
+a folder named `pyPRADA_1.2` will appear in the current folder.  
+
+remove the downloaded file  
+`rm download`  
+
 
 ### Annotation files
