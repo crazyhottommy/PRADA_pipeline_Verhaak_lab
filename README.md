@@ -1,6 +1,7 @@
 # PRADA pipeline in Verhaak lab
 
-This repo is for the PRADA pipeline at Verhaak lab in MD Anderson Cancer Center.  
+This repo is for the PRADA pipeline at [Verhaak 
+lab](http://odin.mdacc.tmc.edu/~rverhaak/) in MD Anderson Cancer Center.  
 PRADA can be downloaded from 
 [here](http://bioinformatics.mdanderson.org/main/PRADA:Overview). 
 
