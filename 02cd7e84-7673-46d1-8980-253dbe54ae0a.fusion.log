@@ -1,0 +1,308 @@
+-------------------------------------------------------------------
+/risapps/nautilusmodules/modulefix/lib64:
+
+module-whatis	 fix/lib64 is an effort to resolve a bug in the RHEL6 enviornment-modules. 
+prepend-path	 LD_LIBRARY_PATH /usr/lib64 
+prepend-path	 LD_LIBRARY_PATH /lib64 
+module		 show modulefix/lib64 
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+/risapps/nautilusmodules/Python/2.7.6-2-anaconda:
+
+module-whatis	 Python 2.7.6-2 (Anaconda) is a python interpreter on /risapps/rhel6. 
+prepend-path	 PATH /risapps/rhel6/python/2.7.6/anaconda/bin 
+prepend-path	 LD_LIBRARY_PATH /risapps/rhel6/python/2.7.6/anaconda/lib 
+prepend-path	 MANPATH /risapps/rhel6/python/2.7.6/anaconda/share/man 
+module		 load modulefix/lib64 
+module		 show Python/2.7.6-2-anaconda 
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+/risapps/nautilusmodules/samtools/0.1.19:
+
+module-whatis	 AppName is <short description here>. 
+prepend-path	 PATH /risapps/rhel5/samtools/0.1.19 
+module		 show samtools/0.1.19 
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+/risapps/nautilusmodules/modulefix/lib64:
+
+module-whatis	 fix/lib64 is an effort to resolve a bug in the RHEL6 enviornment-modules. 
+prepend-path	 LD_LIBRARY_PATH /usr/lib64 
+prepend-path	 LD_LIBRARY_PATH /lib64 
+module		 show modulefix/lib64 
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+/risapps/nautilusmodules/Python/2.7.6-2-anaconda:
+
+module-whatis	 Python 2.7.6-2 (Anaconda) is a python interpreter on /risapps/rhel6. 
+prepend-path	 PATH /risapps/rhel6/python/2.7.6/anaconda/bin 
+prepend-path	 LD_LIBRARY_PATH /risapps/rhel6/python/2.7.6/anaconda/lib 
+prepend-path	 MANPATH /risapps/rhel6/python/2.7.6/anaconda/share/man 
+module		 load modulefix/lib64 
+module		 show Python/2.7.6-2-anaconda 
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+/risapps/nautilusmodules/samtools/0.1.19:
+
+module-whatis	 AppName is <short description here>. 
+prepend-path	 PATH /risapps/rhel5/samtools/0.1.19 
+module		 show samtools/0.1.19 
+-------------------------------------------------------------------
+
+-------------------------------------------------------------------
+/risapps/nautilusmodules/modulefix/lib64:
+
+module-whatis	 fix/lib64 is an effort to resolve a bug in the RHEL6 enviornment-modules. 
+prepend-path	 LD_LIBRARY_PATH /usr/lib64 
+prepend-path	 LD_LIBRARY_PATH /lib64 
+module		 show modulefix/lib64 
+-------------------------------------------------------------------
+
+CMD: /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/prada-fusion	-bam	/scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.flagged.bam	-conf	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/conf.txt	-tag	02cd7e84-7673-46d1-8980-253dbe54ae0a	-mm	1	-junL	40	-outdir	/scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/fusion
+step 0: loading gene annotations @ Thu Jul 30 11:05:25 2015
+100000 exon records loaded
+200000 exon records loaded
+300000 exon records loaded
+400000 exon records loaded
+500000 exon records loaded
+600000 exon records loaded
+700000 exon records loaded
+800000 exon records loaded
+900000 exon records loaded
+1000000 exon records loaded
+1100000 exon records loaded
+step 1: finding discordant pairs @ Thu Jul 30 11:06:01 2015
+200/19988 genes processed for discordant pairs
+400/19988 genes processed for discordant pairs
+600/19988 genes processed for discordant pairs
+800/19988 genes processed for discordant pairs
+1000/19988 genes processed for discordant pairs
+1200/19988 genes processed for discordant pairs
+1400/19988 genes processed for discordant pairs
+1600/19988 genes processed for discordant pairs
+1800/19988 genes processed for discordant pairs
+2000/19988 genes processed for discordant pairs
+2200/19988 genes processed for discordant pairs
+2400/19988 genes processed for discordant pairs
+2600/19988 genes processed for discordant pairs
+2800/19988 genes processed for discordant pairs
+3000/19988 genes processed for discordant pairs
+3200/19988 genes processed for discordant pairs
+3400/19988 genes processed for discordant pairs
+3600/19988 genes processed for discordant pairs
+3800/19988 genes processed for discordant pairs
+4000/19988 genes processed for discordant pairs
+4200/19988 genes processed for discordant pairs
+4400/19988 genes processed for discordant pairs
+4600/19988 genes processed for discordant pairs
+4800/19988 genes processed for discordant pairs
+5000/19988 genes processed for discordant pairs
+5200/19988 genes processed for discordant pairs
+5400/19988 genes processed for discordant pairs
+5600/19988 genes processed for discordant pairs
+5800/19988 genes processed for discordant pairs
+6000/19988 genes processed for discordant pairs
+6200/19988 genes processed for discordant pairs
+6400/19988 genes processed for discordant pairs
+6600/19988 genes processed for discordant pairs
+6800/19988 genes processed for discordant pairs
+7000/19988 genes processed for discordant pairs
+7200/19988 genes processed for discordant pairs
+7400/19988 genes processed for discordant pairs
+7600/19988 genes processed for discordant pairs
+7800/19988 genes processed for discordant pairs
+8000/19988 genes processed for discordant pairs
+8200/19988 genes processed for discordant pairs
+8400/19988 genes processed for discordant pairs
+8600/19988 genes processed for discordant pairs
+8800/19988 genes processed for discordant pairs
+9000/19988 genes processed for discordant pairs
+9200/19988 genes processed for discordant pairs
+9400/19988 genes processed for discordant pairs
+9600/19988 genes processed for discordant pairs
+9800/19988 genes processed for discordant pairs
+10000/19988 genes processed for discordant pairs
+10200/19988 genes processed for discordant pairs
+10400/19988 genes processed for discordant pairs
+10600/19988 genes processed for discordant pairs
+10800/19988 genes processed for discordant pairs
+11000/19988 genes processed for discordant pairs
+11200/19988 genes processed for discordant pairs
+11400/19988 genes processed for discordant pairs
+11600/19988 genes processed for discordant pairs
+11800/19988 genes processed for discordant pairs
+12000/19988 genes processed for discordant pairs
+12200/19988 genes processed for discordant pairs
+12400/19988 genes processed for discordant pairs
+12600/19988 genes processed for discordant pairs
+12800/19988 genes processed for discordant pairs
+13000/19988 genes processed for discordant pairs
+13200/19988 genes processed for discordant pairs
+13400/19988 genes processed for discordant pairs
+13600/19988 genes processed for discordant pairs
+13800/19988 genes processed for discordant pairs
+14000/19988 genes processed for discordant pairs
+14200/19988 genes processed for discordant pairs
+14400/19988 genes processed for discordant pairs
+14600/19988 genes processed for discordant pairs
+14800/19988 genes processed for discordant pairs
+15000/19988 genes processed for discordant pairs
+15200/19988 genes processed for discordant pairs
+15400/19988 genes processed for discordant pairs
+15600/19988 genes processed for discordant pairs
+15800/19988 genes processed for discordant pairs
+16000/19988 genes processed for discordant pairs
+16200/19988 genes processed for discordant pairs
+16400/19988 genes processed for discordant pairs
+16600/19988 genes processed for discordant pairs
+16800/19988 genes processed for discordant pairs
+17000/19988 genes processed for discordant pairs
+17200/19988 genes processed for discordant pairs
+17400/19988 genes processed for discordant pairs
+17600/19988 genes processed for discordant pairs
+17800/19988 genes processed for discordant pairs
+18000/19988 genes processed for discordant pairs
+18200/19988 genes processed for discordant pairs
+18400/19988 genes processed for discordant pairs
+18600/19988 genes processed for discordant pairs
+18800/19988 genes processed for discordant pairs
+19000/19988 genes processed for discordant pairs
+19200/19988 genes processed for discordant pairs
+19400/19988 genes processed for discordant pairs
+19600/19988 genes processed for discordant pairs
+19800/19988 genes processed for discordant pairs
+10000 discordant pairs processed
+20000 discordant pairs processed
+30000 discordant pairs processed
+40000 discordant pairs processed
+50000 discordant pairs processed
+60000 discordant pairs processed
+70000 discordant pairs processed
+80000 discordant pairs processed
+90000 discordant pairs processed
+100000 discordant pairs processed
+110000 discordant pairs processed
+120000 discordant pairs processed
+130000 discordant pairs processed
+140000 discordant pairs processed
+150000 discordant pairs processed
+160000 discordant pairs processed
+170000 discordant pairs processed
+180000 discordant pairs processed
+190000 discordant pairs processed
+200000 discordant pairs processed
+210000 discordant pairs processed
+220000 discordant pairs processed
+230000 discordant pairs processed
+240000 discordant pairs processed
+250000 discordant pairs processed
+260000 discordant pairs processed
+270000 discordant pairs processed
+280000 discordant pairs processed
+290000 discordant pairs processed
+300000 discordant pairs processed
+310000 discordant pairs processed
+320000 discordant pairs processed
+330000 discordant pairs processed
+340000 discordant pairs processed
+350000 discordant pairs processed
+360000 discordant pairs processed
+370000 discordant pairs processed
+380000 discordant pairs processed
+390000 discordant pairs processed
+400000 discordant pairs processed
+410000 discordant pairs processed
+420000 discordant pairs processed
+430000 discordant pairs processed
+440000 discordant pairs processed
+450000 discordant pairs processed
+460000 discordant pairs processed
+470000 discordant pairs processed
+480000 discordant pairs processed
+490000 discordant pairs processed
+500000 discordant pairs processed
+510000 discordant pairs processed
+520000 discordant pairs processed
+step 2: finding recurrent pairs (candidates) @ Thu Jul 30 11:46:35 2015
+step 3: finding potential junction spanning reads @ Thu Jul 30 11:46:35 2015
+200/340 genes processed for potential junc reads
+extracted 10000/346365 potential junc reads
+extracted 20000/346365 potential junc reads
+extracted 30000/346365 potential junc reads
+extracted 40000/346365 potential junc reads
+extracted 50000/346365 potential junc reads
+extracted 60000/346365 potential junc reads
+extracted 70000/346365 potential junc reads
+extracted 80000/346365 potential junc reads
+extracted 90000/346365 potential junc reads
+extracted 100000/346365 potential junc reads
+extracted 110000/346365 potential junc reads
+extracted 120000/346365 potential junc reads
+extracted 130000/346365 potential junc reads
+extra/scratch/rists/hpcapps/rhel6/python/anaconda/lib/python2.7/site-packages/Bio/Seq.py:342: BiopythonDeprecationWarning: This method is obsolete; please use str(my_seq) instead of my_seq.tostring().
+  BiopythonDeprecationWarning)
+[bwa_index] Pack FASTA... 0.27 sec
+[bwa_index] Reverse the packed sequence... 0.04 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 2.35 seconds elapse.
+[bwa_index] Construct BWT for the reverse packed sequence...
+[bwa_index] 2.41 seconds elapse.
+[bwa_index] Update BWT... 0.05 sec
+[bwa_index] Update reverse BWT... 0.06 sec
+[bwa_index] Construct SA from BWT and Occ... 0.67 sec
+[bwa_index] Construct SA from reverse BWT and Occ... 0.68 sec
+[bwa_aln_core] calculate SA coordinate... 19.15 sec
+[bwa_aln_core] write to the disk... 0.04 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] calculate SA coordinate... 6.29 sec
+[bwa_aln_core] write to the disk... 0.01 sec
+[bwa_aln_core] 346365 sequences have been processed.
+[bwa_aln_core] Data structures initialized: 0.17 sec
+[bwa_aln_core] 262144 sequences loaded: 0.52 sec
+[bwa_aln_core] convert 262144 sequences to sequence coordinate: 0.27 sec
+[bwa_aln_core] refine gapped alignments for 262144 sequences: 0.20 sec
+[bwa_aln_core] print alignments for 262144 sequences: 0.43 sec
+[bwa_aln_core] 262144 sequences have been processed.
+[bwa_aln_core] 84221 sequences loaded: 0.32 sec
+[bwa_aln_core] convert 84221 sequences to sequence coordinate: 0.09 sec
+[bwa_aln_core] refine gapped alignments for 84221 sequences: 0.07 sec
+[bwa_aln_core] print alignments for 84221 sequences: 0.13 sec
+[bwa_aln_core] 346365 sequences have been processed.
+[samopen] SAM header is present: 115599 sequences.
+cted 140000/346365 potential junc reads
+extracted 150000/346365 potential junc reads
+extracted 160000/346365 potential junc reads
+extracted 170000/346365 potential junc reads
+extracted 180000/346365 potential junc reads
+extracted 190000/346365 potential junc reads
+extracted 200000/346365 potential junc reads
+extracted 210000/346365 potential junc reads
+extracted 220000/346365 potential junc reads
+extracted 230000/346365 potential junc reads
+extracted 240000/346365 potential junc reads
+extracted 250000/346365 potential junc reads
+extracted 260000/346365 potential junc reads
+extracted 270000/346365 potential junc reads
+extracted 280000/346365 potential junc reads
+extracted 290000/346365 potential junc reads
+extracted 300000/346365 potential junc reads
+extracted 310000/346365 potential junc reads
+extracted 320000/346365 potential junc reads
+extracted 330000/346365 potential junc reads
+extracted 340000/346365 potential junc reads
+step 4: building junction database @ Thu Jul 30 11:58:50 2015
+building junction for 100/319 pairs
+building junction for 200/319 pairs
+building junction for 300/319 pairs
+step 5: aligning potential junction reads to junction database @ Thu Jul 30 11:59:37 2015
+100000 junction alignments parsed
+200000 junction alignments parsed
+300000 junction alignments parsed
+step 6: summarizing fusion evidences @ Thu Jul 30 12:00:19 2015
+step 7: generating fusion lists @ Thu Jul 30 12:00:19 2015
+step done @ Thu Jul 30 12:00:29 2015
