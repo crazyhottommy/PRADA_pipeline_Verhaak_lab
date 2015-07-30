@@ -1,5 +1,9 @@
 #! /bin/bash
 
+## author Ming Tang 07/15/2015
+## this script is used to generate the fusion call PRADA pbs file
+## usuage:  ./generate_PRADA_fusion_pbs.sh TCGA_analysis_id
+
 set -e
 set -u
 set -o pipefail
