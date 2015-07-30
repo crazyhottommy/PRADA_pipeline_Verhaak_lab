@@ -1,0 +1,18 @@
+
+#PBS -V
+#PBS -N 02cd7e84-7673-46d1-8980-253dbe54ae0a
+#PBS -j oe
+#PBS -o /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/02cd7e84-7673-46d1-8980-253dbe54ae0a.fusion.log
+#PBS -m abe
+#PBS -M mtang1@mdanderson.org
+#PBS -l nodes=1:ppn=3,mem=10gb
+#PBS -l walltime=3:00:00
+#PBS -d /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a
+
+# PRADA needs biopython 
+module load Python/2.7.6-anaconda
+
+/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/prada-fusion \
+ -bam /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.flagged.bam \
+ -conf /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/conf.txt -tag 02cd7e84-7673-46d1-8980-253dbe54ae0a -mm 1 -junL 40 \
+ -outdir /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/fusion

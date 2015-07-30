@@ -1,0 +1,208 @@
+#! /bin/sh
+#PBS -V
+#PBS -N 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005
+#PBS -j oe
+#PBS -o /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/02cd7e84-7673-46d1-8980-253dbe54ae0a.log
+#PBS -m abe
+#PBS -M mtang1@mdanderson.org
+#PBS -l nodes=1:ppn=12,walltime=40:00:00,mem=30gb
+#PBS -d /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a
+echo "Job start: `date`"
+echo "step 2_e1_1 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/bwa-0.5.7-mh/bwa aln -t 12 /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.fasta /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.fastq > 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sai
+then
+	echo "step 2_e1_1 done: `date`"
+else
+	echo "step 2_e1_1 ERROR"
+	exit
+fi
+
+echo "step 2_e1_2 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/bwa-0.5.7-mh/bwa samse -s -n 100 /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.fasta 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sai /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.fastq > 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sam
+then
+	echo "step 2_e1_2 done: `date`"
+else
+	echo "step 2_e1_2 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sai
+echo "step 2_e1_3 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools view -bS -o 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.bam 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sam
+then
+	echo "step 2_e1_3 done: `date`"
+else
+	echo "step 2_e1_3 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sam
+echo "step 2_e1_4 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools sort -n -m 1000000000 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.bam 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sorted
+then
+	echo "step 2_e1_4 done: `date`"
+else
+	echo "step 2_e1_4 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.bam
+echo "step 2_e2_1 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/bwa-0.5.7-mh/bwa aln -t 12 /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.fasta /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.fastq > 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sai
+then
+	echo "step 2_e2_1 done: `date`"
+else
+	echo "step 2_e2_1 ERROR"
+	exit
+fi
+
+echo "step 2_e2_2 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/bwa-0.5.7-mh/bwa samse -s -n 100 /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.fasta 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sai /scratch/genomic_med/mtang1/fusion/UVM/02cd7e84-7673-46d1-8980-253dbe54ae0a/140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.fastq > 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sam
+then
+	echo "step 2_e2_2 done: `date`"
+else
+	echo "step 2_e2_2 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sai
+echo "step 2_e2_3 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools view -bS -o 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.bam 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sam
+then
+	echo "step 2_e2_3 done: `date`"
+else
+	echo "step 2_e2_3 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sam
+echo "step 2_e2_4 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools sort -n -m 1000000000 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.bam 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sorted
+then
+	echo "step 2_e2_4 done: `date`"
+else
+	echo "step 2_e2_4 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.bam
+echo "step 3_e1_1 start: `date`"
+if
+	java -Djava.io.tmpdir=tmp/ -cp /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/GATK//RemapAlignments.jar -Xmx8g org.broadinstitute.cga.tools.gatk.rna.RemapAlignments M=/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.map IN=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sorted.bam OUT=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.remapped.bam R=/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens_assembly19.fasta REDUCE=TRUE
+then
+	echo "step 3_e1_1 done: `date`"
+else
+	echo "step 3_e1_1 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.sorted.bam
+echo "step 3_e1_2 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools sort -n -m 1000000000 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.remapped.bam 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.remapped.sorted
+then
+	echo "step 3_e1_2 done: `date`"
+else
+	echo "step 3_e1_2 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.remapped.bam
+echo "step 3_e2_1 start: `date`"
+if
+	java -Djava.io.tmpdir=tmp/ -cp /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/GATK//RemapAlignments.jar -Xmx8g org.broadinstitute.cga.tools.gatk.rna.RemapAlignments M=/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.map IN=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sorted.bam OUT=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.remapped.bam R=/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens_assembly19.fasta REDUCE=TRUE
+then
+	echo "step 3_e2_1 done: `date`"
+else
+	echo "step 3_e2_1 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.sorted.bam
+echo "step 3_e2_2 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools sort -n -m 1000000000 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.remapped.bam 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.remapped.sorted
+then
+	echo "step 3_e2_2 done: `date`"
+else
+	echo "step 3_e2_2 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.remapped.bam
+echo "step 4_1 start: `date`"
+if
+	java -Djava.io.tmpdir=tmp/ -Xmx8g -jar /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/GATK//PairMaker.jar IN1=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.remapped.sorted.bam IN2=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.remapped.sorted.bam OUTPUT=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.paired.bam TMP_DIR=tmp/
+then
+	echo "step 4_1 done: `date`"
+else
+	echo "step 4_1 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end1.remapped.sorted.bam
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.end2.remapped.sorted.bam
+echo "step 4_2 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools sort -m 1000000000 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.paired.bam 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.paired.sorted
+then
+	echo "step 4_2 done: `date`"
+else
+	echo "step 4_2 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.paired.bam
+echo "step 5 start: `date`"
+if
+	java -Xmx8g -jar /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/Picard//AddOrReplaceReadGroups.jar I=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.paired.sorted.bam O=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.paired.sorted.bam RGLB=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005 RGPL=illumina RGPU=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005 RGSM=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005
+then
+	echo "step 5 done: `date`"
+else
+	echo "step 5 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.paired.sorted.bam
+echo "step 6_1 start: `date`"
+if
+	/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools index 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.paired.sorted.bam
+java -Xmx8g -jar /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/GATK//GenomeAnalysisTK.jar -l INFO -R /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens_assembly19.fasta --default_platform illumina --knownSites /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/dbsnp_135.b37.vcf -I 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.paired.sorted.bam --downsample_to_coverage 10000 -T CountCovariates -cov ReadGroupCovariate -cov QualityScoreCovariate -cov CycleCovariate -cov DinucCovariate -nt 12 -recalFile 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.orig.csv
+then
+	echo "step 6_1 done: `date`"
+else
+	echo "step 6_1 ERROR"
+	exit
+fi
+
+echo "step 6_2 start: `date`"
+if
+	java -Xmx8g -jar /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/GATK//GenomeAnalysisTK.jar -l INFO -R /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens_assembly19.fasta --default_platform illumina -I 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.paired.sorted.bam -T TableRecalibration --out 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.bam -recalFile 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.orig.csv
+then
+	echo "step 6_2 done: `date`"
+else
+	echo "step 6_2 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.paired.sorted.bam
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.paired.sorted.bam.bai
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.orig.csv
+echo "step 7 start: `date`"
+if
+	java -Xmx8g -jar /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/Picard//MarkDuplicates.jar I=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.bam O=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.flagged.bam METRICS_FILE=140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.Duplicates_metrics.txt VALIDATION_STRINGENCY=SILENT TMP_DIR=tmp/
+/scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/samtools-0.1.16/samtools index 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.flagged.bam
+then
+	echo "step 7 done: `date`"
+else
+	echo "step 7 ERROR"
+	exit
+fi
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.bam
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.bai
+rm -f 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.Duplicates_metrics.txt
+echo "step 8 start: `date`"
+if
+	java -Xmx8g -jar /scratch/genomic_med/mtang1/PRADA/pyPRADA_1.2/tools/RNA-SeQC_v1.1.7.jar -ttype 2 -t /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens.GRCh37.64.gtf -r /scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens_assembly19.fasta -s '140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005|140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005.withRG.GATKRecalibrated.flagged.bam|Disc' -o 140624_UNC15-SN850_0372_AC4L6NACXX_GAGTGG_L005/
+then
+	echo "step 8 done: `date`"
+else
+	echo "step 8 ERROR"
+	exit
+fi
+
+echo "PIPELINE FINISHED"
