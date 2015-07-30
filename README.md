@@ -76,7 +76,7 @@ Go inside the `02cd7e84-7673-46d1-8980-253dbe54ae0a` folder, and submit the pbs 
 `msub 02cd7e84-7673-46d1-8980-253dbe54ae0a.pbs`
 
 Inside the `UVM` folder:  
-`generate_PRADA_fusion_pbs.sh 02cd7e84-7673-46d1-8980-253dbe54ae0a` will generate the fusion call pbs files in the `02cd7e84-7673-46d1-8980-253dbe54ae0a` folder. 
+`./generate_PRADA_fusion_pbs.sh 02cd7e84-7673-46d1-8980-253dbe54ae0a` will generate the fusion call pbs files in the `02cd7e84-7673-46d1-8980-253dbe54ae0a` folder. 
 
 `cd 02cd7e84-7673-46d1-8980-253dbe54ae0a`  
 `msub 02cd7e84-7673-46d1-8980-253dbe54ae0a.fusion.pbs`  
