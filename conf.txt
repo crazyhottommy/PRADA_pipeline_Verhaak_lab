@@ -1,0 +1,31 @@
+#PLEASE EDIT EACH VARIABLE BASED ON YOUR FILE SETTING!
+#DON'T EDIT block title"--REF--", "--PBS--", "--BWA aln--", "--BWA samse--"
+#Users may download REFERENCE files at http://bioinformatics.mdanderson.org/Software/PRADA/
+#Set REFERENCE file paths according to your own settings. 
+
+--REF--
+compdb_fasta	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.fasta
+compdb_map	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.plus.genome.map
+genome_fasta	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens_assembly19.fasta
+genome_gtf	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Homo_sapiens.GRCh37.64.gtf
+dbsnp_vcf	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/dbsnp_135.b37.vcf
+select_tx	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.selected.transcripts
+feature_file	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.canonical.gene.exons.tab.txt
+tx_seq_file	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.fasta
+ref_anno	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.annotations
+ref_map		=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.formatted.map
+ref_fasta	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64.transcriptome.formatted.fasta
+cds_file	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/ensembl.hg19.cds.txt
+txcat_file	=	/scratch/genomic_med/mtang1/PRADA/PRADA-ref-hg19/Ensembl64_primary_transcript.txt
+
+--PBS--
+-m = abe
+-M = mtang1@mdanderson.org
+-l = nodes=1:ppn=12,walltime=40:00:00,mem=30gb  #nodes and ppn are required
+
+--BWA aln--
+-t = 12					#This should be equal to the number of ppn
+
+--BWA samse--
+-n = 100
+
