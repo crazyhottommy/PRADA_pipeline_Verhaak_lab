@@ -17,7 +17,7 @@ then
 fi
 
 sample_id=$1
-module load module load cghub/3.8.6-130
+module load cghub/3.8.6-130
 
 #downloading at the login node, max 5 processes
 #put the cghub.key in the same directory of this script
