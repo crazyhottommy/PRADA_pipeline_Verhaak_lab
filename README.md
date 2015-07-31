@@ -1,4 +1,6 @@
-# PRADA RNA-seq fusion pipeline in Verhaak lab
+# PRADA RNA-seq fusion pipeline in the Verhaak lab
+
+### Introduction
 
 PRADA is a tool to identify fusion genes in cancers from RNA-seq data developed at [Verhaak 
 lab](http://odin.mdacc.tmc.edu/~rverhaak/) in MD Anderson Cancer Center.  
@@ -6,10 +8,13 @@ PRADA can be downloaded from
 [here](http://bioinformatics.mdanderson.org/main/PRADA:Overview). 
 
 This repo is for PRADA pipeline analzying TCGA RNA-seq data sets with the MD Anderson high-performance
-computing cluster.    
+computing cluster. 
 
 **The scripts are still hard coded...you will need to tweak it to adapt to your own use.**  
 change path names etc..
+
+
+Special thanks to Kathy Hu and Siyuan Zheng in the Verhaak lab in helping me with all the questions.
 
 ### Installation 
 login to your HPC and you are at your home folder:
@@ -101,9 +106,31 @@ Examples:
 It all depends on the size of the fastq files and the fusion numbers in the sample. You can tweak the paramters by yourself.
 
 ### Output
+There are many files (intermediate files etc) will be generated after fusion call. The most informative file you want is the *fus.summary.txt file. One example is below:  
+
+|  Gene_A  | Gene_B  | A_chr  | B_chr  | A_strand  | B_strand  | Discordant_n  | JSR_n  | perfectJSR_n  | Junc_n  | Position_Consist  | Junction                                      | Identity | Align_Len  | Evalue | BitScore |
+| -------- | ------- | ------ | ------ | --------- | --------- | ------------- | ------ | ------------- | ------- | ----------------- | --------------------------------------------- | -------- | ---------- | ------ | -------- |
+| MAPKAPK5 | ACAD10  | 12     | 12     | 1         | 1         | 31            | 19     | 16            | 1       | PARTIALLY         | MAPKAPK5:12:112308984_ACAD10:12:112182447,19  | 95.00    | 20         | 0.002  | 31.9     |
+
+Explanation of each column can be found in the PRADA manual:
+
+>Discordant represents the discordant reads mapping to the gene pair. Junction Spanning Reads (JSR) are reads which maps to the gene-fusion exon junction and the mate end maps to one of the genes in the gene-pair. Perfect JSR are reads with 0 mis-matches. Junction represents the unique exon junctions that were found in the JSR. Position Consistency indicates if the mapping location of the discordant reads is consistent with the location of the spanning reads.
+>
+
+In the `UVM` folder, copy all the fusion summary files to a new folder fusion_results  
+
+`find . -name "*fus.summary.txt" | xargs cp -t ./fusion_results`
+`cd fusion_results`  
+The first line is the header in the summary file.  
+`ls -1 | xargs wc -l | awk '$1>1' | wc -l`  
+`39`  
+Only 39 out of 80 samples have fusions identified by PRADA, and each sample only have serval fusions (max 12).   
+
+1. PRADA is very conservative in finding fusions. In other words, PRDAD is very accurate in finding fusions but may lack sensitivity.  
+2. Melanoma samples do not have many fusions according to Siyuan. Liquid tumors have a lot more.    
 
 
- 
+
 
 
 
