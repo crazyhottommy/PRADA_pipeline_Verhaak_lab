@@ -106,7 +106,7 @@ Examples:
 It all depends on the size of the fastq files and the fusion numbers in the sample. You can tweak the paramters by yourself.
 
 ### Output
-There are many files (intermediate files etc) will be generated after fusion call. The most informative file you want is the *fus.summary.txt file. One example is below:  
+There will be many files (intermediate files etc) generated after fusion call. The most informative file you want is the *fus.summary.txt file. One example is below:  
 
 |  Gene_A  | Gene_B  | A_chr  | B_chr  | A_strand  | B_strand  | Discordant_n  | JSR_n  | perfectJSR_n  | Junc_n  | Position_Consist  | Junction                                      | Identity | Align_Len  | Evalue | BitScore |
 | -------- | ------- | ------ | ------ | --------- | --------- | ------------- | ------ | ------------- | ------- | ----------------- | --------------------------------------------- | -------- | ---------- | ------ | -------- |
