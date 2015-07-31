@@ -1,9 +1,12 @@
-# PRADA pipeline in Verhaak lab
+# PRADA RNA-seq fusion pipeline in Verhaak lab
 
-This repo is for the PRADA pipeline at [Verhaak 
+PRADA is a tool to identify fusion genes in cancers from RNA-seq data developed at [Verhaak 
 lab](http://odin.mdacc.tmc.edu/~rverhaak/) in MD Anderson Cancer Center.  
 PRADA can be downloaded from 
 [here](http://bioinformatics.mdanderson.org/main/PRADA:Overview). 
+
+This repo is for PRADA pipeline analzying TCGA RNA-seq data sets with the MD Anderson high-performance
+computing cluster.    
 
 **The scripts are still hard coded...you will need to tweak it to adapt to your own use.**  
 change path names etc..
@@ -56,6 +59,7 @@ Inside the `UVM` folder:
 `gtdownload_preprocess_pbs_generation.sh` will download the fastq files into a folder named with the TCGA analysis id from cghub, untar the file, rename the fastq files to have suffix *end1.fastq *end2.fastq and generate the pbs files for PRADA preprocessing.
 
 `cat summary.tsv| cut -f17 | sort | uniq | head`  
+
 02cd7e84-7673-46d1-8980-253dbe54ae0a  
 046e576b-cf6c-4669-9b8a-18710a2241e1  
 0476df29-c667-4803-be37-2d2d19512f36  
@@ -65,7 +69,8 @@ Inside the `UVM` folder:
 0b7f8d10-e786-4030-a5e0-4dc310f477ab  
 0b853e3d-40f7-4134-af62-d81ff068811e  
 11125e23-fa6c-47b7-baeb-845c5f94c73e  
-119c55e8-7e54-4a28-a642-d0bcf42e6b02  
+119c55e8-7e54-4a28-a642-d0bcf42e6b02
+  
 
 Example usage:  
 Inside the `UVM` folder:    
@@ -81,9 +86,7 @@ Inside the `UVM` folder:
 `cd 02cd7e84-7673-46d1-8980-253dbe54ae0a`  
 `msub 02cd7e84-7673-46d1-8980-253dbe54ae0a.fusion.pbs`  
 
-
 The sample pbs file and log file can be found in the repo.  
-
 
 ### Timing and resources needed  
 
