@@ -52,7 +52,7 @@ join -t $'\t' -1 1 -2 2 <(cat merged_fusion_calls.txt | body sort -k1,1) <(cat a
 # The inner-joined file has TCGA barcode and sample_id in the last two columns, I want to move them to the second and third column
 # cut command can not reorder the columns, I use csvcut from the csvkit library http://csvkit.readthedocs.org/en/latest/tutorial/1_getting_started.html#csvcut-data-scalpel
 
-# command line tools from csvkit is alwasy use comma as input and output delimiter. Use -t to specify input is tab delimited and -T to specify
+# command line tools from csvkis alwasy use comma as input and output delimiter. Use -t to specify input is tab delimited and -T to specify
 # output is tab delimited.
 
 csvcut -t -c 1,18,19,2-17 annotated_fusion_calls.txt | csvformat -T > fusion_calls_with_TCGA_barcode.txt 
