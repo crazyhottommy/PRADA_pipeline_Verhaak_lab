@@ -116,9 +116,9 @@ Examples:
 
 1. The RNA-seq fastq zipped files are around 12G, it takes gtdownload around 30mins to download.  
 
-2. After untar the zipped fastq (~12G for end1.fastq and end2.fastq respectively) files, and renamed them. It takes 28hrs, 21G RAM with 12 cpus to finish PRADA preprocessing.
+2. After untar the zipped fastq (~12G for end1.fastq and end2.fastq respectively) files, and renamed them. It takes ~28hrs, ~25G RAM with 12 cpus to finish PRADA preprocessing.
 
-3. It takes ~1 hour to find the fusions using 3 cpus and 3Gb RAM
+3. It takes ~1 hour to find the fusions using 2 cpus and ~4Gb RAM
 
 It all depends on the size of the fastq files and the fusion numbers in the sample. You can tweak the paramters by yourself.
 
@@ -146,10 +146,31 @@ Only 39 out of 80 samples have fusions identified by PRADA, and each sample only
 1. PRADA is very conservative in finding fusions. In other words, PRDAD is very accurate in finding fusions but may lack sensitivity.  
 2. Melanoma samples do not have many fusions according to Siyuan. Liquid tumors have a lot more.    
 
+The *fus.summary.txt files only has the analysis_id as their basenames.
+concatenate them together and annoate with `TCGA_barcode` and `sample_ids`:
+`cat ../../data/summary.tsv | cut -f2,17,20 > annotation.txt`  
+`./merge_fusion_calls.sh`  
 
+A file named `fusion_calls_with_TCGA_barcode.txt` will be generated.  
 
+One can sort based on the fourth column (fusion `Gene_A`) and (fusion `Gene_B`) to get an idea of recurrent fusion points.   
 
+`cat fusion_calls_with_TCGA_barcode.txt | body sort -k4,4 -k5,5 > fusion_calls_with_TCGA_barcode.sorted.txt`  
 
-
+`wc -l fusion_calls_with_TCGA_barcode.sorted.txt`   
+`79`   
+only 78 fusions events were found in these particular data sets.   
 
 ### Downstream  filtering
+
+According to Kosuke Yoshihara et.al [The landscape and therapeutic relevance of cancer-associated transcript fusions](http://www.nature.com/onc/journal/vaop/ncurrent/full/onc2014406a.html)  
+
+> In this study, we extracted fusions (1) with at least two discordant read pairs, (2) at least one junction spanning reads and (3) without high gene homology between each fusion gene partner (E-value>0.001)
+
+I filtered the fusion calls based on the `Discordant_n`, `JSR_n` and `Evalue` column:    
+maintaing the header  
+`cat fusion_calls_with_TCGA_barcode.sorted.txt | awk ' NR ==1 || ($10 > 1 && $11 > 0 && $18 > 0.001)' | tee fusion_calls_with_TCGA_barcode.sorted.filtered.txt| wc -l`  
+`58`
+ 
+After filtering, only 57 fusions were remained.
+
