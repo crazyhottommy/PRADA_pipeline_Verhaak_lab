@@ -78,7 +78,7 @@ I am processing some UVM samples, make a new folder
 Inside the `UVM` folder:  
 `./gtdownload_preprocess_pbs_generation.sh TCGA_analysis_id` 
 
-`gtdownload_preprocess_pbs_generation.sh` will download the fastq files into a folder named with the TCGA analysis id from cghub, untar the file, rename the fastq files to have suffix *end1.fastq *end2.fastq and generate the pbs files for PRADA preprocessing.
+`gtdownload_preprocess_pbs_generation.sh` will download the fastq files into a folder named with the TCGA analysis id from cghub, untar the file, rename the fastq files to have suffix *end1.fastq *end2.fastq and generate the pbs files for PRADA preprocessing. See how to use gtdownload [here](https://cghub.ucsc.edu/docs/user/download.html).  
 
 `cat summary.tsv| cut -f17 | sort | uniq | head`  
 
@@ -136,7 +136,7 @@ Explanation of each column can be found in the PRADA manual:
 
 In the `UVM` folder, copy all the fusion summary files to a new folder fusion_results  
 
-`find . -name "*fus.summary.txt" | xargs cp -t ./fusion_results`
+`find . -name "*fus.summary.txt" | xargs cp -t ./fusion_results`  
 `cd fusion_results`  
 The first line is the header in the summary file.  
 `ls -1 | xargs wc -l | awk '$1>1' | wc -l`  
@@ -149,7 +149,11 @@ Only 39 out of 80 samples have fusions identified by PRADA, and each sample only
 The *fus.summary.txt files only has the analysis_id as their basenames.
 concatenate them together and annoate with `TCGA_barcode` and `sample_ids`:
 `cat ../../data/summary.tsv | cut -f2,17,20 > annotation.txt`  
-`./merge_fusion_calls.sh`  
+`./merge_fusion_calls.sh`   
+
+In order to use `merge_fusion_calls.sh`, you need to install
+[csvkit](http://csvkit.readthedocs.org/en/latest/index.html)
+and [body function]( https://github.com/crazyhottommy/data-science-at-the-command-line/blob/master/tools/body).  
 
 A file named `fusion_calls_with_TCGA_barcode.txt` will be generated.  
 
