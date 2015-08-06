@@ -99,7 +99,7 @@ Inside the `UVM` folder:
 `./gtdownload_preprocess_pbs_generation.sh  02cd7e84-7673-46d1-8980-253dbe54ae0a`
 
 Go inside the `02cd7e84-7673-46d1-8980-253dbe54ae0a` folder, and submit the pbs file:  
-`cd 02cd7e84-7673-46d1-8980-253dbe54ae0a.pbs`  
+`cd 02cd7e84-7673-46d1-8980-253dbe54ae0a`  
 `msub 02cd7e84-7673-46d1-8980-253dbe54ae0a.pbs`
 
 Inside the `UVM` folder:  
